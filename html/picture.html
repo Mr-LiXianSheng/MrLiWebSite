@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mr.Li李先生-时尚健康画册</title>
+<link type="text/css" rel="stylesheet" href="../css/style.css">
+<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+window.onload=function(){
+	var oBtn=document.getElementById("btn")
+	var oMask=document.getElementById("mask")
+	var oLogin=document.getElementById("login")
+	var oClose=document.getElementById("close")
+	var sHeight=document.documentElement.scrollHeight
+	oBtn.onclick=function(){			
+			oMask.style.display="block"
+			oMask.style.height=sHeight+"px"
+			oLogin.style.display="block"
+	
+			oMask.onclick=oClose.onclick=function(){
+				oMask.style.display="none"
+				oLogin.style.display="none"			
+				}		
+			}
+	}
+        $(function () {
+            var isTrue = true;
+            $("#box .img").bind("click", function () {
+                if (isTrue) {
+                    menuFun($(this), "../images/index_nav.png", 0, false);
+                } else {
+                    menuFun($(this), "../images/top_a.png", -650, true);
+                }
+            });
+
+            function menuFun(that, img, left, istrue) {
+                that.find("img").attr("src", img);
+                $("#box .menu").animate({ "left": left }, 300);
+                isTrue = istrue;
+            }
+        });
+    </script>
+<div class="head">
+  <div id="box">
+    <div class="img"> 
+    	<img src="../images/top_a.png" /> 
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="../index.html" target="_parent">首页<span>home</span></a></li>
+        <li><a href="about.html" target="_parent">关于<span>about</span></a></li>
+        <li><a href="works.html" target="_parent">作品<span>works</span></a></li>
+        <li><a href="growth.html" target="_parent">成长<span>growth</span></a></li>
+        <li><a href="contact.html" target="_parent">联系<span>contact</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="share"> 
+ 	  <a href="https://www.facebook.com/?ref=tn_tnmn" target="_blank" class="sh_6"></a>
+  	  <a href="https://twitter.com/" target="_blank" class="sh_5"></a>
+      <a href="http://weibo.com/u/2465360277/home?topnav=1&wvr=6" target="_blank" class="sh_1"></a> 
+      <a href="http://www.douban.com/" target="_blank" class="sh_2"></a> 
+      <a href="http://t.qq.com/a494947422" target="_blank" class="sh_3"></a> 
+      <a href="#" class="sh_4" id="btn"></a> 
+  </div>
+  <div id="mask"></div>
+  <div id="login"> 
+  	<span id="close"></span> 
+  </div>
+</div>
+
+<div class="content_about">
+	<div class="aodi">
+    	<img src="../images/huace.jpg">
+    </div>
+</div>
+
+<div class="bottom poa">
+  <p>Copyright © 2014 John All rights reserved　　　　<a href="http://www.miitbeian.gov.cn/state/outPortal/loginPortal.action" target="_blank">京ICP备14053642号</a></p>
+</div>   
+</body>
+</html>
